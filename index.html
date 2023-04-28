@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <p class="logo">MyLogo</p>
+      <ul class="items ">
+        <li class="item mob-link-item"><a href="index.html">Home</a></li>
+        <li class="item mob-link-item"><a href="#">About</a></li>
+        <li class="item mob-link-item"><a href="#">Blog</a></li>
+        <li class="item mob-link-item"><a href="#">Contact</a></li>
+        <li class="item">
+          <button class="btn-primary">Sign in</button>
+        </li>
+      </ul>
+      <input type="checkbox" name="btn" id="btn-menu" />
+      <label for="btn-menu" class="btn-toggle"> &#9776; </label>
+    </header>
+    <ul class="mob-items my-mob-items">
+      <li class="mob-item mob-link-item my-mob-item"><a href="index.html">Home</a></li>
+      <li class="mob-item mob-link-item my-mob-item"><a href="#">About</a></li>
+      <li class="mob-item mob-link-item my-mob-item"><a href="#">Blog</a></li>
+      <li class="mob-item mob-link-item my-mob-item"><a href="#">Contact</a></li>
+      <li class="mob-item mob-link-item my-mob-item"><a href="#">Login/Sign in</a></li>
+    </ul>
+  </body>
+  <script>
+    const toggleBtn = document.querySelector(".btn-toggle");
+    const navLinks = document.querySelectorAll(".mob-items .mob-item a");
+    const mobMenu = document.querySelector(".my-mob-items");
+    const mobItem = document.querySelector(".mob-item");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobMenu.classList.remove("open");
+      });
+    });
+
+    toggleBtn.addEventListener("click", () => {
+      if (mobMenu.style.display != "block") {
+        mobMenu.style.display = "block";
+      } else {
+        mobMenu.style.display = "none";
+      }
+
+      // console.log('toggleBtn clicked');
+    });
+  </script>
+</html>
